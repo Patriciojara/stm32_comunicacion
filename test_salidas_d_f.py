@@ -43,8 +43,8 @@ def off_pa8():
 
 def main():
     print("Comandos:")
-    print("  d=NN    -> duty % y ON (ej: d=30)") Salida PA10
-    print("  d2=NN    -> duty % y ON (ej: d=30)") Salida PA8
+    print("  d=NN    -> duty % y ON (ej: d=30) Salida PA10") 
+    print("  d2=NN    -> duty % y ON (ej: d=30) Salida PA8") 
     print("  f=NNNN  -> frecuencia Hz (ej: f=1000)")
     print("  off     -> apagar PWM")
     print("  q       -> salir")
