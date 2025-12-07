@@ -1,0 +1,37 @@
+02:41:26 **** Incremental Build of configuration Debug for project test_pwm1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H723xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:125:3: warning: implicit declaration of function 'PWM_SetDuty' [-Wimplicit-function-declaration]
+  125 |   PWM_SetDuty(TIM_CHANNEL_1, duty_ch1);
+      |   ^~~~~~~~~~~
+../Core/Src/main.c:127:3: warning: implicit declaration of function 'PWM_SetFrequencyHz' [-Wimplicit-function-declaration]
+  127 |   PWM_SetFrequencyHz(last_freq);
+      |   ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:358:6: warning: conflicting types for 'PWM_SetDuty'; have 'void(uint32_t,  uint8_t)' {aka 'void(long unsigned int,  unsigned char)'}
+  358 | void PWM_SetDuty(uint32_t channel, uint8_t duty)
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:125:3: note: previous implicit declaration of 'PWM_SetDuty' with type 'void(uint32_t,  uint8_t)' {aka 'void(long unsigned int,  unsigned char)'}
+  125 |   PWM_SetDuty(TIM_CHANNEL_1, duty_ch1);
+      |   ^~~~~~~~~~~
+../Core/Src/main.c:370:6: warning: conflicting types for 'PWM_SetFrequencyHz'; have 'void(uint16_t)' {aka 'void(short unsigned int)'}
+  370 | void PWM_SetFrequencyHz(uint16_t freq_hz)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:127:3: note: previous implicit declaration of 'PWM_SetFrequencyHz' with type 'void(uint16_t)' {aka 'void(short unsigned int)'}
+  127 |   PWM_SetFrequencyHz(last_freq);
+      |   ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test_pwm1.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\patri\Desktop\SPEL\stm32_comunicacion\test_pwm1\STM32H723VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test_pwm1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test_pwm1.elf
+ 
+arm-none-eabi-size  test_pwm1.elf 
+arm-none-eabi-objdump -h -S test_pwm1.elf  > "test_pwm1.list"
+   text	   data	    bss	    dec	    hex	filename
+  23444	     24	   1784	  25252	   62a4	test_pwm1.elf
+Finished building: default.size.stdout
+ 
+Finished building: test_pwm1.list
+ 
+
+02:41:29 Build Finished. 0 errors, 4 warnings. (took 2s.712ms)
+

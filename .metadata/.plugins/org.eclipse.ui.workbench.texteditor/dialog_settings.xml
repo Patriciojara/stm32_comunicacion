@@ -2,4 +2,8 @@
 <section name="Workbench">
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
+	<list key="searchhistory">
+		<item value="HAL_SPI_Receive_IT(&amp;hspi6, &amp;spi_rx_byte, 1);"/>
+		<item value="HAL_TIM"/>
+	</list>
 </section>
